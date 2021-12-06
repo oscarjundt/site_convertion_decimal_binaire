@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>convertion</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: gray;
+				margin:0px;
+            }
+            #titre{
+                background-color: white;
+                padding: 5px;
+            }
+            #text{
+                border:double;
+                background-color: white;
+                padding: 5%;
+                margin:5%;
+            }
+        </style>
+        <script>
+            function cal(){
+                let tab= [];
+                res="";
+                let val = document.getElementById("valeur").value;
+                let res2 = 0;
+                for(let i=1;i<=val;i*=2){
+                    tab[res2]=i;
+					res2++;
+                }
+                for(let i2=(tab.length)-1;i2>=0;i2--){
+                    if(val>=tab[i2]){
+                        res+="1";
+                        val=val-tab[i2];
+                    }
+                    else{
+                        res+="0";
+                    }
+                }
+                document.getElementById("resultat").value=res;
+            }
+            function cal2(){
+                alert("en construction");
+            }
+            function ini(){
+                document.getElementById("valeur").value = "";
+                document.getElementById("resultat").value="";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="titre">
+            <h1>convertion</h1>
+        </div>
+        <div id="text">
+            <input type="text" id="valeur"/>
+            <br>
+            <input type="text" id="resultat"/>
+            <br>
+            <input type="button" onclick="cal()" value="decimal->binaire"/>
+            <input type="button" onclick="cal2()" value="binaire->decimal"/>
+            <br>
+            <input type="button" onclick="ini()" value="initialisation"/>
+        </div>
+    </body>
+</html>
